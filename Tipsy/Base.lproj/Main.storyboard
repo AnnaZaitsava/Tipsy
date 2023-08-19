@@ -71,6 +71,7 @@
                                                             <constraint firstAttribute="height" constant="54" id="bMk-Ag-9jl"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                                        <color key="tintColor" systemColor="systemMintColor"/>
                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                         <state key="normal" title="0%">
                                                             <color key="titleColor" systemColor="systemMintColor"/>
@@ -100,6 +101,7 @@
                                                             <constraint firstAttribute="height" constant="54" id="id0-dt-ZaM"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                                        <color key="tintColor" red="0.35686278339999999" green="0.73333334920000004" blue="0.78823530669999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                         <state key="normal" title="20%">
                                                             <color key="titleColor" systemColor="systemMintColor"/>
@@ -204,22 +206,23 @@
                         <outlet property="tenPctButton" destination="4yW-qg-UJs" id="oTQ-0c-J5V"/>
                         <outlet property="twentyPctButton" destination="ZGX-lZ-smp" id="VyK-1C-aQL"/>
                         <outlet property="zeroPctButton" destination="BV2-46-H9h" id="Qgj-oS-Mi9"/>
+                        <segue destination="01x-ZR-evR" kind="presentation" identifier="showResult" id="Nwd-6T-sL3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="101.5267175572519" y="3.5211267605633805"/>
         </scene>
-        <!--View Controller-->
+        <!--Result View Controller-->
         <scene sceneID="4wu-Bi-cFc">
             <objects>
-                <viewController id="01x-ZR-evR" sceneMemberID="viewController">
+                <viewController id="01x-ZR-evR" customClass="ResultViewController" customModule="Tipsy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="WOu-Dq-cTq">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="886"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9C6-vx-9ow">
-                                <rect key="frame" x="107" y="806" width="200" height="56"/>
+                                <rect key="frame" x="107" y="830" width="200" height="56"/>
                                 <color key="backgroundColor" systemColor="systemMintColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="DOC-ns-o9R"/>
@@ -230,6 +233,9 @@
                                 <buttonConfiguration key="configuration" style="plain" title="Recalculate">
                                     <fontDescription key="titleFontDescription" type="system" pointSize="35"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="recalculatePressed:" destination="01x-ZR-evR" eventType="touchUpInside" id="ISF-Yk-jqT"/>
+                                </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6bi-h9-Cvx">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="300"/>
@@ -290,6 +296,11 @@
                             <constraint firstItem="eRa-It-Ca7" firstAttribute="leading" secondItem="h39-lJ-pQv" secondAttribute="leading" constant="50" id="umi-dl-t4y"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="UOM-Bt-BKn"/>
+                    <connections>
+                        <outlet property="settingsLabel" destination="eRa-It-Ca7" id="5RW-bz-zdc"/>
+                        <outlet property="totalLabel" destination="Cwg-9d-cDZ" id="2w7-ae-dK8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bla-YG-A9B" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
